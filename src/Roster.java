@@ -50,25 +50,48 @@ public class Roster
         return studentList.size();
     }
 
-    public static void print_average_grade(Integer studentID)
+    //TODO: needs similar treatment as the remove function - search though and print
+    public static void print_average_grade(String studentID)
     {
+        boolean studentFound = false;
+        Integer studentIDInt = Integer.parseInt(studentID);
+        for (int i = 0; i < studentList.size(); i++)
+        {
+            if (studentList.get(i).getStudentID() == studentIDInt)
+            {
+                ArrayList<Integer> gradesList = studentList.get(studentIDInt).getGrades();
+                int totalGradeValue = 0;
+                int numberOfGrades = 0;
+                for (int j = 0; j < gradesList.size(); j++) {
+                    totalGradeValue += gradesList.get(j);
+                    numberOfGrades += 1;
+                }
+                System.out.println(totalGradeValue / numberOfGrades);
+                studentFound = true;
+            }
+        }
+        if (!studentFound)
+        {
+            System.out.println("ERROR: No student with that student number is found in the database");
+        }
         //TODO: more elegant solution than this needed, but it works for now.  subtract 1 from the given student
         // number == index of that student in the ArrayList.
-        Integer studentIndex = studentID - 1;
-        if (studentIndex >= 0) {
-            ArrayList<Integer> gradesList = studentList.get(studentID).getGrades();
-            int totalGradeValue = 0;
-            int numberOfGrades = 0;
-            for (int i = 0; i < gradesList.size(); i++) {
-                totalGradeValue += gradesList.get(i);
-                numberOfGrades += 1;
-            }
-            System.out.println(totalGradeValue / numberOfGrades);
-        }
-        else
-        {
-            System.out.println("Invalid student");
-        }
+//        Integer studentIndex = Integer.parseInt(studentID);
+//
+//        if (studentIndex >= 0) {
+//            ArrayList<Integer> gradesList = studentList.get(studentIndex).getGrades();
+//            int totalGradeValue = 0;
+//            int numberOfGrades = 0;
+//            for (int i = 0; i < gradesList.size(); i++) {
+//                totalGradeValue += gradesList.get(i);
+//                numberOfGrades += 1;
+//            }
+//            System.out.println(totalGradeValue / numberOfGrades);
+//        }
+//        else
+//        {
+//            System.out.println("Invalid student");
+//        }
     }
 
     //TODO: If I understand correctly, I only need to validate email addresses for this function, the actual Roster
