@@ -88,7 +88,8 @@ public class main {
         myRoster.print_invalid_emails();
         for (int i = 0; i < myRoster.getRosterSize(); i++)
         {
-            myRoster.print_average_grade(Integer.toString(i));
+            //myRoster.studentList.get(i)
+            myRoster.print_average_grade(Integer.toString(i+1));
         }
         myRoster.remove("3");
         myRoster.remove("3");

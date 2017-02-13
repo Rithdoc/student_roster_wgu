@@ -55,14 +55,17 @@ public class Roster
     {
         boolean studentFound = false;
         Integer studentIDInt = Integer.parseInt(studentID);
+        //System.out.println(studentIDInt);
         for (int i = 0; i < studentList.size(); i++)
         {
             if (studentList.get(i).getStudentID() == studentIDInt)
             {
-                ArrayList<Integer> gradesList = studentList.get(studentIDInt).getGrades();
+                ArrayList<Integer> gradesList = studentList.get(i).getGrades();
                 int totalGradeValue = 0;
                 int numberOfGrades = 0;
-                for (int j = 0; j < gradesList.size(); j++) {
+                for (int j = 0; j < gradesList.size(); j++)
+                {
+                    //System.out.println("Add one Grade");
                     totalGradeValue += gradesList.get(j);
                     numberOfGrades += 1;
                 }
