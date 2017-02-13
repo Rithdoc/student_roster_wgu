@@ -24,14 +24,20 @@ public class Student
 
     //TODO: Generated function doesn't use getters, isn't formatted for use in Roster[1]
     public String print() {
-        return "Student{" +
-                "studentID=" + this.getStudentID() +
-                ", firstName='" + this.getFirstName() + '\'' +
-                ", lastName='" + this.getLastName() + '\'' +
-                ", emailAddress='" + this.getEmailAddress() + '\'' +
-                ", age=" + this.getAge() +
-                ", grades=" + this.getGrades() +
-                '}';
+//        return "Student{" +
+//                "studentID=" + this.getStudentID() +
+//                ", firstName='" + this.getFirstName() + '\'' +
+//                ", lastName='" + this.getLastName() + '\'' +
+//                ", emailAddress='" + this.getEmailAddress() + '\'' +
+//                ", age=" + this.getAge() +
+//                ", grades=" + this.getGrades() +
+//                '}';
+        return this.getStudentID() +
+                "\t" + this.getFirstName() +
+                "\t" + this.getLastName() +
+                "\t" + this.getEmailAddress() +
+                "\t" + this.getAge() +
+                "\t" + this.getGrades();
     }
 
     public int getStudentID() {
